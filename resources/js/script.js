@@ -37,12 +37,7 @@ $(document).ready(function() {
 	// });
 
 	//second version -more efficent
-	$('a').click(function(){
-    $('html, body').animate({
-        scrollTop: $( $(this).attr('href') ).offset().top
-    }, 500);
-    return false;
-	});
+
 
 
 	//animations on scroll
@@ -68,8 +63,35 @@ $(document).ready(function() {
 		$('.js--wp-4').addClass('animated pulse');
 	}, {
 		offset: '50%'
-	});		
+	});	
 
 
+	//mobile navigation
+	// $('.js--nav-icon').click(function() {
+	// 	var nav = $('.js--main-nav');
+
+	// 	nav.slideToggle(200);
+	// });
+	$('.js--nav-icon').click(function() {
+		var nav = $('.js--main-nav');
+		var icon = $('.js--nav-icon i');
+		nav.slideToggle(200);
+
+		if (icon.hasClass('ion-navicon-round')) {
+			icon.addClass('ion-close-round');
+			icon.removeClass('ion-navicon-round');
+		} else {
+			icon.addClass('ion-navicon-round');
+			icon.removeClass('ion-close-round');			
+		}
+	});
+
+	//nav scrolling -didn't want to be before nav icon toggle --possible error in this code
+	$('a').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top
+    }, 500);
+    return false;
+	});
 
 });
