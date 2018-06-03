@@ -66,6 +66,26 @@ $(document).ready(function() {
 	});	
 
 
+	// maps
+
+	var map = new GMaps({
+	  div: '.map',
+	  lat: 36.8161393,
+	  lng: -76.0713143,
+	  zoom: 12
+	});
+
+	map.addMarker({
+	  lat: 36.8161393,
+	  lng: -76.0713143,
+	  title: 'Omnifood',
+	  infoWindow: {
+	  	content: '<p>Our Virginia Beach Location</p>'
+	  }
+	});
+
+
+
 	//mobile navigation
 	// $('.js--nav-icon').click(function() {
 	// 	var nav = $('.js--main-nav');
@@ -93,5 +113,8 @@ $(document).ready(function() {
     }, 500);
     return false;
 	});
+
+
+	
 
 });
